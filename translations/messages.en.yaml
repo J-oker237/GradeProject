@@ -1,0 +1,21 @@
+matiere: Subject
+note: Grade
+matieres: Subjects
+notes: Grades
+btnVoir: Look up info
+aucunemat: No subject available
+nom: name 
+ajouternote: Add grade
+ajouter: Add
+ajoutermat: Add subjects
+submit: Submit 
+sup: Delete
+noteEtud: Student Grades
+aucuneNote: There is no grades at this moment !
+coefficient: Ratio
+dateajout: Date added
+moyenne: Average
+listemat: Subjects list
+details: Details
+modifier: Edit
+supprimer: Delete

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MatiereController!{% endblock %}
+
+{% block body %}
+<h1>{{'ajoutermat'|trans}}</h1>
+{{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-6">
+                {{'nom'|trans}}
+                {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                {{'coefficient'|trans}}
+                {{ form_widget(form.coef, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-primary">{{'ajouter'|trans}}</button>
+            </div>
+        </div>
+        {{ form_end(form) }}
+
+
+<div class="container mt-4">
+        <h1>{{'listemat'|trans}}</h1>
+
+        {% if matieres is not empty %}
+            <div class="row">
+                {% for element in matieres %}
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h3 class="card-title">{{ element.nom }}</h3>
+                                <p class="card-text">{{'coefficient'|trans}} {{ element.coef }}.</p>
+                                <a href="{{ path('matiere_show', {'id': element.id}) }}" class="btn btn-info">{{'details'|trans}}</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>il n'y a pas de matières</p>
+        {% endif %}
+{% endblock %}

@@ -1,0 +1,19 @@
+matiere: Matiere
+note: Note
+matieres: Matiere
+notes: Notes
+aucunemat: Pas de matiere disponible
+nom: nom
+ajouternote: Ajouter note
+ajouter: Ajouter
+ajoutermat: Ajouter matière
+submit: Valider
+sup: supprimer
+noteEtud: Note d'étudiant
+aucuneNote: Il n'y a pas de notes 
+coefficient: Coefficient 
+dateajout: Date d'ajout
+moyenne: Moyenne
+listemat: Liste des matières 
+details: Détails
+modifier: Modifier

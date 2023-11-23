@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier les matières{% endblock %}
+
+{% block body %}
+<h1>{{'matiere'|trans}}</h1>
+    <div class="container mt-4">
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+
+        <div class="row">
+            <div class="col-md-6">
+                {{ 'nom'|trans }}
+                {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                {{ 'coefficient'|trans }}
+                {{ form_widget(form.coef, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-primary">{{'modifier'|trans}}</button>
+            </div>
+        </div>
+        {{ form_end(form) }}
+
+        <form method="post" action="{{ path('matiere_delete', {'id': matiere.id}) }}">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit" class="btn btn-danger mt-4" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette matière?')">{{'sup'|trans}}</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello NotesController!{% endblock %}
+
+{% block body %}
+    <h1>{{'ajouternote'|trans}}</h1>
+
+    {{ form_start(form) }}
+    {{'matiere'|trans}}
+    {{ form_widget(form.matiere) }}
+    {{'note'|trans}}
+    {{ form_widget(form.note) }}
+    <div class="row mt-4">
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-primary">{{'ajouter'|trans}}</button>
+            </div>
+        </div>
+    {{ form_end(form) }}
+
+    <h2>{{'noteEtud'|trans}}</h2>
+    {% if notes is empty %}
+        <p>{{'aucuneNote'|trans}} <a href="{{ path('app_matieres') }}">{{'ajouternote'|trans}}</a></p>
+    {% else %}
+        <table>
+            <thead>
+                <tr>
+                    <th>. {{'note'|trans}}</th>
+                    <th>. {{'matiere'|trans}}</th>
+                    <th>. {{'coefficient'|trans}}</th>
+                    <th>. {{'dateajout'|trans}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for note in notes %}
+                    <tr>
+                        <td>{{ note.note }}</td>
+                        <td>{{ note.matiere.nom }}</td>
+                        <td>{{ note.matiere.coef }}</td>
+                        <td>{{ note.date|date('d/m/Y H:i:s') }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+<h4> {{'moyenne'|trans}} : {{ average|number_format(2) }}</h4>
+{% endblock %}
+
