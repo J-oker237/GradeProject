@@ -49,7 +49,6 @@ class MatiereController extends AbstractController
         return $this->render('matiere/show.html.twig', [
             'matiere' => $matiere,
             'form' => $formView,
-            'form' => $form->createView(),
         ]);
     }
 

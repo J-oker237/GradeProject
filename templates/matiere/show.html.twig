@@ -27,8 +27,10 @@
         {{ form_end(form) }}
 
         <form method="post" action="{{ path('matiere_delete', {'id': matiere.id}) }}">
+        <div class="form-group mt-4 text-center">
           <input type="hidden" name="_method" value="DELETE">
           <button type="submit" class="btn btn-danger mt-4" onclick="return confirm('{{ 'Êtes-vous sûr de vouloir supprimer cette matière?'|trans }}')">{{ 'sup'|trans }}</button>
+          </div>
         </form>
       </div>
     </div>
