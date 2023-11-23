@@ -15,12 +15,12 @@ class Matiere
     #[ORM\Column]
     private ?int $id = null;
 
-    
+
     #[Assert\NotBlank]
     #[ORM\Column(length: 255)]
     private ?string $nom = null;
 
-
+    #[Assert\Length(50)]
     #[Assert\NotBlank]
     #[ORM\Column]
     private ?int $coef = null;

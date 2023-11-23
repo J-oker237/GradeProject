@@ -15,7 +15,7 @@ class Notes
     #[ORM\Column]
     private ?int $id = null;
 
-    #[Assert\LessThan(20)]
+    #[Assert\LessThanOrEqual(20)]
     #[Assert\PositiveOrZero]
     #[Assert\NotBlank]
     #[ORM\Column]
